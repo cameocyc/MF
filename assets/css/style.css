@@ -1,11 +1,3 @@
-/**
-* Template Name: Valera
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/valera-free-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -24,7 +16,10 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
+h1 {
+  font-family: 'Uncial Antiqua', cursive;
+}
+
 h2,
 h3,
 h4,
@@ -32,37 +27,6 @@ h5,
 h6 {
   font-family: "Raleway", sans-serif;
 }
-
-h1.libre-baskerville {
-  font-family: 'Libre Baskerville', serif;
-  font-weight: 400;
-}
-
-h1.macondo {
-  font-family: 'Macondo', cursive;
-  font-weight: 400;
-}
-
-h1.arbutus-slab {
-  font-family: 'Arbutus Slab', serif;
-  font-weight: 400;
-}
-
-h1.bona-nova {
-  font-family: 'Bona Nova', serif;
-  font-weight: 700;
-}
-
-h1.uncial-antiqua {
-  font-family: 'Uncial Antiqua', cursive;
-  font-weight: 400;
-}
-
-h1.Noto-Serif-TC {
-  font-family: 'Noto Serif TC', serif;
-  font-weight: 500;
-}
-
 
 /*--------------------------------------------------------------
 # Preloader
@@ -480,30 +444,26 @@ h1.Noto-Serif-TC {
 #hero {
   width: 100%;
   height: 100vh;
+  background: url("../img/hero-bg.webp") top center;
+  background-size: cover;
   position: relative;
   margin-bottom: -70px;
-  
+  animation: colorShift 15s infinite, zoomIn 4s infinite alternate;
 }
 
-.background-rotate {
-  width: 100%;
-  height: 100%;
-  background: url("../img/photo-1692401885962-0d29dcdf5fba.avif") center center;
-  background-size: cover;
+#hero:before {
+  content: "";
+  background: rgba(21, 5, 23, 0.5) linear-gradient(rgba(26, 0, 33, 0.5) 0%, rgba(26, 0, 33, 0.5) 5%, rgba(38, 6, 51, 0.5) 60%, rgba(147, 47, 69, 0.7) 86%, rgba(236, 97, 93, 0.7) 94%, rgba(236, 97, 93, 0.5) 100%) repeat scroll 0% 0%;
   position: absolute;
+  bottom: 0;
   top: 0;
   left: 0;
-  z-index: -1; /* 確保背景在文字下方 */
-  will-change: transform, filter; /* 告訴瀏覽器這些屬性將會改變 */
-  animation: colorShift 60s infinite, zoomIn 10s infinite alternate;
+  right: 0;
 }
 
-@keyframes zoomIn {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
+@media (max-width: 992px) {
+  #hero {
+    margin-bottom: -60px;
   }
 }
 
@@ -517,42 +477,6 @@ h1.Noto-Serif-TC {
   100% {
     filter: hue-rotate(360deg);
   }
-}
-
-@media (max-width: 992px) {
-  #hero {
-    margin-bottom: -60px;
-  }
-}
-
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1; /* Ensure the video is below the content */
-}
-
-.video-iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-#hero:before {
-  content: "";
-  /* background: rgba(21, 5, 23, 0.5) linear-gradient(rgba(26, 0, 33, 0.5) 0%, rgba(26, 0, 33, 0.5) 5%, rgba(38, 6, 51, 0.5) 40%, rgba(147, 47, 69, 0.7) 76%, rgba(236, 97, 93, 0.7) 94%, rgba(236, 97, 93, 0.5) 100%) repeat scroll 0% 0%; */
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
 #hero .hero-container {
@@ -610,8 +534,8 @@ h1.Noto-Serif-TC {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 40px;
-    line-height: 54px;
+    font-size: 30px;
+    line-height: 36px;
   }
 
   #hero h2 {
@@ -774,6 +698,7 @@ section {
 
 .our-values .card-text {
   color: #5e5e5e;
+  text-align: center;
 }
 
 .our-values .read-more a {
@@ -800,15 +725,16 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Clients
+# Clients & Team
 --------------------------------------------------------------*/
 .clients {
   padding: 15px 0;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .clients img {
-  max-width: 45%;
+  max-width: 70%;
   transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 15px 0;
@@ -822,7 +748,7 @@ section {
 
 @media (max-width: 768px) {
   .clients img {
-    max-width: 40%;
+    max-width: 80%;
   }
 }
 
@@ -1615,7 +1541,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/footer-bg.jpg") center center no-repeat;
+  background: url("../img/footer-bg.webp") center center no-repeat;
   color: #fff;
   font-size: 14px;
   position: relative;
@@ -1628,7 +1554,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(2, 0, 2, 0.6);
+  background: linear-gradient(to bottom,rgba(2, 0, 2, 0.7), rgba(2, 0, 2, 0.1));
   z-index: 1;
 }
 
@@ -1636,7 +1562,7 @@ section {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 #footer .footer-top h3 {
@@ -1723,7 +1649,7 @@ section {
 }
 
 #footer .footer-bottom {
-  border-top: 1px solid #3b0e41;
+  /* border-top: 1px solid #3b0e41; */
   z-index: 2;
   position: relative;
   padding-top: 40px;
@@ -1731,7 +1657,7 @@ section {
 }
 
 #footer .copyright {
-  float: left;
+  text-align: center;
 }
 
 #footer .credits {
